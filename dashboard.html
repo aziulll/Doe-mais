@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Doe +</title>
+    <!-- Inclua o arquivo CSS do Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="h-screen flex bg-gray-100">
+        <!-- Barra de Navegação Lateral -->
+        <nav class="w-64 bg-green-500">
+            <div class="p-4">
+                <h1 class="text-3xl text-white font-semibold">Doa + | Dashboard</h1>
+            </div>
+            <ul class="mt-2">
+                <li class="px-4 py-2 text-1xl hover:bg-green-400">
+                    <a href="#" class="block text-white" onclick="mudarConteudo('pagina1')">Home</a>
+                </li>
+                <li class="px-4 py-2 text-1xl hover:bg-green-400">
+                    <a href="#" class="block text-white" onclick="mudarConteudo('pagina2')">Minhas doações</a>
+                    
+                </li>
+                <li class="px-4 py-2 text-1xl hover:bg-green-400">
+                    <a href="#" class="block text-white" onclick="mudarConteudo('pagina3')">Dúvidas</a>
+                </li>
+                <li class="px-4 py-2 text-1xl hover:bg-green-400">
+                    <a href="#" class="block text-white" onclick="mudarConteudo('pagina4')">Minha Conta</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo da Página -->
+        <main id="mainContent" class="flex-1 p-4">
+            
+            <div id="pagina1Content"  style="display: none;">
+                <p><h1 class="text-3xl font-semibold">Home</h1></p>
+              
+            </div>
+            <div id="pagina2Content" style="display: none;">
+                <p><h1 class="text-3xl font-semibold">Minhas doações</h1></p>
+                <div class="container" style="margin-top: 5px;" id="results">
+
+                </div>
+        
+            </div>
+            <div id="pagina3Content" style="display: none;">
+                <p><h1 class="text-3xl font-semibold">Dúvidas</h1></p>
+                <p></p>
+            </div>
+            <div id="pagina4Content"  style="display: none;">
+                <h1 class="text-3xl font-semibold">Informações pessoais</h1>
+               
+                <div class="flex items-center gap-x-6">
+                    <img class="h-30 w-30 rounded-full mt-2" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <div>
+                      <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+                      <p class="text-sm font-semibold leading-6 text-indigo-600">Co-Founder / CEO</p>
+                    </div>
+                  </div>
+                            
+            </div>
+        </main>
+
+        <script>
+            function mudarConteudo(pagina) {
+                // Ocultar todos os conteúdos das páginas
+                document.getElementById('pagina1Content').style.display = 'none';
+                document.getElementById('pagina2Content').style.display = 'none';
+                document.getElementById('pagina3Content').style.display = 'none';
+                document.getElementById('pagina4Content').style.display = 'none';
+
+                // Mostrar o conteúdo da página selecionada
+                document.getElementById(pagina + 'Content').style.display = 'block';
+            }
+        </script>
+        <script src="src/js/main.js"></script>
+    </div>
+</body>
+</html>
